@@ -1,0 +1,18 @@
+.game-table {
+    border-collapse: collapse;
+    background-color: #555;
+}
+
+.game-table-cell {
+    width: 25px;
+    height:25px;
+    border: 1px solid #aaa;
+}
+
+.snake-unit {
+    background-color: white;
+}
+
+.food-unit {
+    background-color: red;
+}

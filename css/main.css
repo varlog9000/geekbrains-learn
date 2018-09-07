@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i|Merriweather+Sans:300,300i,400,400i,700,700i,800|Merriweather:300,300i,400,400i,700,700i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i&subset=cyrillic,cyrillic-ext");
+.font-merriweather, h1, h2, h3, h4, h5, h6, p, .slogan {
+  font-family: "Merriweather Sans", sans-serif; }
+
+.font-cousine {
+  font-family: "Cousine", monospace; }
+
+.font-merriweather-extrabold, .active-project:after {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 800; }
+
+.font-roboto-condenced, .logo {
+  font-family: "Roboto Condensed", sans-serif; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px; }
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 7px;
+  margin-left: 15px; }
+
+h4 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 25px; }
+
+.mega-container {
+  min-height: 100%; }
+
+.clr:after {
+  content: "";
+  display: block;
+  height: 100px; }
+
+.container {
+  max-width: 1170px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0px 20px; }
+
+.header {
+  background-color: #cccccc;
+  padding: 20px;
+  margin-bottom: 10px; }
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black; }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none; }
+  .menu li {
+    display: flex; }
+  .menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #2c2c2c;
+    padding: 15px 5px 10px;
+    max-width: 320px;
+    min-height: 200px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-bottom: 15px; }
+  .menu__preview {
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid transparent;
+    border-radius: 5px; }
+  .menu p {
+    margin-bottom: 10px; }
+
+ol li {
+  margin: 5px; }
+
+button {
+  padding: 2px 5px;
+  border-radius: 3px; }
+
+.code {
+  background-color: darkgray;
+  display: block;
+  color: #fffbf0;
+  padding: 7px;
+  padding-left: 30px; }
+  .code_answer {
+    color: #000000; }
+
+.links {
+  margin: 20px 30px; }
+  .links a, .links li {
+    font-size: 22px;
+    color: black; }
+
+.active-project {
+  position: relative; }
+  .active-project:after {
+    content: "is Underconstruction";
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    border: 2px solid darkred;
+    color: #cd0603;
+    background-color: #fff;
+    padding: 5px; }
+
+.footer {
+  height: 100px;
+  margin-top: -100px;
+  padding: 20px;
+  background-color: #333333;
+  color: #ffffff; }
+
+/*# sourceMappingURL=main.css.map */

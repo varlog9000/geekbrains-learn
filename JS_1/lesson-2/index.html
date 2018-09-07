@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script src="script.js">
+    </script>
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>Самостоятельная работа по JS. Урок 2</title>
+</head>
+<body>
+<div class="mega-container clr">
+    <header class="header">
+        <div class="container">
+            <a href="http://varlog9000.ru" class="logo">Varlog9000</a>
+            <p class="slogan">Учебный сайт</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>JavaScript самостоятельная работа №2</h1>
+            <ol>
+                <li>Почему код даёт именно такие результаты? <br>
+                    <p class="code">var a = 1, b = 1, c, d;<br>
+                        c = ++a; alert(c); // 2 <span class="code_answer">- присваивание предудущего числа переменной,
+                            потом увеличение на 1, запись увеличенного числа в переменную</span><br>
+                        d = b++; alert(d); // 1 <span class="code_answer">- присваивание предудущего числа переменной, потом увеличение на 1, увеличенное число будет использовано при следующем вызове переменной</span><br>
+                        c = (2+ ++a); alert(c); // 5 <span class="code_answer">- сложение: 2 + 3</span><br>
+                        d = (2+ b++); alert(d); // 4 <span class="code_answer">- сложение: 2 + 2 (переменная увеличена, но результат в нее будет записан только при следующем обращении)</span><br>
+                        alert(a); // 3 <br>
+                        alert(b); // 3 <span class="code_answer">- отображается результат от предудущего увеличения на 1 единицу</span>
+                    </p>
+                </li>
+                <li>Чему будет равен x в примере ниже?
+                    <p class="code"> var a = 2; <br>
+                        var x = 1 + (a *= 2); <span class="code_answer">Действует формула 1+ (a=a*2) = 1+4 =5 </span>
+                    </p>
+                </li>
+                <li>Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем
+                    написать скрипт, который работает по следующему принципу:
+                    <ul>
+                        <li style="margin-left: 20px;">если a и b положительные, вывести их разность;</li>
+                        <li style="margin-left: 20px;">если а и b отрицательные, вывести их произведение;</li>
+                        <li style="margin-left: 20px;">если а и b разных знаков, вывести их сумму</li>
+                    </ul>
+                    ноль можно считать положительным числом. <br>
+                    <form action="#" class="code">Введите число A: <input type="text" id="number1" value="40"
+                                                                          style="width: 40px;">
+                        Введите
+                        число B: <input type="text" value="20" id="number2" style="width: 40px;">
+                        <button onclick="comparison()">Вычислить</button>
+
+                    </form>
+
+                </li>
+                <li>Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод
+                    чисел от a до 15.
+                    <form action="#" class="code">Введите число A: <input type="text" value="6" id="startSeq"
+                                                                          style="width: 40px;">
+                        <button onclick="sequence()">Вывести числа</button>
+
+                    </form>
+                </li>
+                <li>Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно
+                    использовать оператор return.
+                    <form action="#" class="code">Введите число A: <input type="text" id="numberA" value="6"
+                                                                          style="width: 40px;">
+                        Введите
+                        число B: <input type="text" id="numberB" value="3" style="width: 40px;">
+                        <button onclick="mathOperation(+numberA.value,+numberB.value,'addt')"> A + B</button>
+                        <button onclick="mathOperation(+numberA.value,+numberB.value,'subt')"> A - B</button>
+                        <button onclick="mathOperation(+numberA.value,+numberB.value,'mult')"> A * B</button>
+                        <button onclick="mathOperation(+numberA.value,+numberB.value,'divs')"> A / B</button>
+                    </form>
+
+                </li>
+                <li>Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1,
+                    arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного
+                    значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и
+                    вернуть
+                    полученное значение (использовать switch).
+                    <form action="#" class="code">Введите число A: <input type="text" id="numA" value="6"
+                                                                          style="width: 40px;">
+                        Введите
+                        число B: <input type="text" id="numB" value="3" style="width: 40px;">
+                        <button onclick="comparisonV2(+numA.value,+numB.value)"> Сравнить и вычислить</button>
+                    </form>
+
+                </li>
+                <li>* Сравнить null и 0. Попробуйте объяснить результат. <br>
+                    <span class="code"><span class="code_answer">null не равно "0". null представляет значение "ничего", которое присваивается переменной при очистке ее значения. А "0" - это число, которое может хранить переменная после операции по прибавлению противоположного числа к ее значению</span></span>
+                </li>
+                <li>* С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val,
+                    pow), где val – заданное число, pow – степень.
+                    <form action="#" class="code">Введите число: <input type="text" value="6" id="numberVal"
+                                                                        style="width: 40px;"> Введите
+                        степень для возведения: <input type="text" id="numberPow" value="3" style="width: 40px;">
+                        <button onclick="mathOperation(+numberVal.value,+numberPow.value,'pw')">Возвести число в
+                            степень
+                        </button>
+
+                    </form>
+                </li>
+            </ol>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; Никита Юрьевич Куля.</p>
+        <p>Все материалы со сторонних сайтов использованы только для обучения</p>
+        <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47423350 = new Ya.Metrika2({ id:47423350, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47423350" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    </div>
+</footer>
+</body>
+</html>

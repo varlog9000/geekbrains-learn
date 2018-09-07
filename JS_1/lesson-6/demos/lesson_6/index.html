@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+//        //Способ 1
+//        function sayHello(name) {
+//            console.log('hello ', name);
+//        }
+//
+//        //Способ 2
+//        function clickName() {
+//            sayHello('Петя');
+//        }
+//
+//        function noName() {
+//            sayHello('Не имя');
+//        }
+
+        window.onload = function () {
+//            var button_2 = document.getElementById('button_2');
+//            button_2.onclick = clickName;
+//            button_2.onclick = noName;
+//            button_2.onclick = null;
+//
+//
+//            //Способ 3 сразу 2 работают
+//            var button_3 = document.getElementById('button_3');
+//            button_3.addEventListener('click', clickName);
+//            button_3.addEventListener('click', noName);
+//            button_3.removeEventListener('click', clickName); //Удалить
+//
+//            //Способ 4
+//            var button_4 = document.getElementById('button_4');
+//            button_4.addEventListener('click', function (event) {
+//                console.log(event);
+//                this.innerText = 'Новый текст кнопки';
+//                console.log(event.type, 'по кнопке', event.target);
+//                console.log(event.clientX, event.clientY);
+//            });
+//
+//            var button_5 = document.getElementById('button_5');
+//            var content = document.getElementById('content');
+//            button_5.addEventListener('click', function () {
+//                if (content.classList.contains('hide')){
+//                    content.classList.remove('hide');
+//                } else {
+//                    content.classList.add('hide');
+//                }
+//            });
+
+            function changePic(event) {
+                var bigDiv = document.getElementById('big'); // Нашли большой блок
+                bigDiv.innerHTML = '';  //Обнуление
+                var smallSrc = event.currentTarget.getAttribute('src'); // нашли путь картики
+
+                var newImg = document.createElement('img'); // создаем новое изображение
+                newImg.src = smallSrc.replace('small', 'big'); // меняем путь картики с название small/ на big/
+                bigDiv.appendChild(newImg); // создаем новый элемент
+            }
+
+
+            var img = document.getElementsByClassName('image');
+            for (var i = 0; i < img.length; i++) {
+                img[i].onclick = changePic;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="big"></div>
+<div id="gallary">
+    <img src="small/image_1.jpeg" alt="cat" id="image_1" class="image">
+    <img src="small/image_2.jpg" alt="cat" id="image_2" class="image">
+    <img src="small/image_3.jpeg" alt="cat" id="image_3" class="image">
+</div>
+<!--<button onclick="sayHello('Дима');">Кнопка 1</button>-->
+<!--<button id="button_2">Кнопка 2</button>-->
+<!--<button id="button_3">Кнопка 3</button>-->
+<!--<button id="button_4">Кнопка 4</button>-->
+<!--<button id="button_5">Кнопка 5</button>-->
+<!--<div id="content" class="hide">-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+        <!--A ad, aliquid, corporis dolores esse eum explicabo illo-->
+        <!--in laboriosam nihil quam, voluptatum! At, autem commodi-->
+        <!--iure labore rerum sint tempore.</p>-->
+<!--</div>-->
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="wrapper"></div>
+    <button onclick="removeDiv()">Удалить мой первый блок</button>
+    <h3>Lorem ipsum dolor sit.</h3>
+    <ul class="menu">
+        <li class="list">list_1</li>
+        <li class="list">list_2</li>
+        <li class="list">list_3</li>
+        <li class="list">list_4</li>
+    </ul>
+    <p id="text" class="paragraph new-class">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum laudantium modi numquam
+        quas quisquam rerum temporibus? Asperiores incidunt ipsum maxime nisi omnis pariatur quibusdam
+        quos repellat sapiente vitae. Eaque, ex?</p>
+    <script>
+        var p = document.getElementById('text'); // поиск по id
+        var h3i = document.getElementsByTagName('h3'); // поиск по тегу
+        h3i[0].innerText = 'new text heading'; // меняем текст
+        var list = document.getElementsByClassName('list');
+        for (var i = 0; i < list.length; i++) {
+            list[i].innerText = 'new list text';
+            console.log(i);
+        }
+        p.innerHTML = '<i>new text</i>'; // Меняем html
+        p.style.color = 'coral';
+//        p.className = 'new-class'; удаляет все классы, добавляет этот
+        p.classList.add('new-class');
+        p.classList.remove('paragraph');
+//        p.classList.toggle('new-class');
+        var para = p.classList.contains('new-class');
+        console.log(para);
+       // var div = document.getElementById('wrapper');
+        var div = document.createElement('div');
+        div.innerText = 'Мой первый блок с js';
+        div.className = 'new-div';
+        document.getElementById('wrapper').appendChild(div);
+        function removeDiv() {
+            var eL = document.getElementById('wrapper');
+            eL.parentNode.removeChild(eL); //Удаление элемента по клику
+        }
+    </script>
+</body>
+</html>

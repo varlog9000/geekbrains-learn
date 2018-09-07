@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кто хочет стать миллионером?</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="billioner.css">
+    <script src="billioner.js"></script>
+    <script src="mygame.js"></script>
+</head>
+<body>
+<div class="mega-container clr">
+    <header class="header">
+        <div class="container">
+            <a href="http://varlog9000.ru" class="logo">Varlog9000</a>
+            <p class="slogan">Учебный сайт</p>
+        </div>
+    </header>
+    <main>
+        <div class="container game">
+
+            <div class="question-answer">
+                <img src="img/maxresdefault.jpg" alt="" class="logo">
+                <div class="commandKey">
+                    <div class="control">
+                        <button onclick="startGame()" id="keyStartGame"><img src="img/2018-01-22_23-45-21.png.jpg"
+                                                                             alt=""></button>
+                    </div>
+                    <div class="tips">
+                        <button onclick="takeMyMoney()" id="keyTakeMoney" disabled><img src="img/59888365.jpeg.jpg"
+                                                                                        alt=""></button>
+                        <button onclick="callFriend()" id="keyCallFriend" disabled><img src="img/Telefon_(joker).jpg"
+                                                                                        alt=""></button>
+                        <button onclick="oneHalf()" id="keyFiftyFifty" disabled><img src="img/50-50_(joker).jpg" alt="">
+                        </button>
+                        <button onclick="assistanceOfTheHall()" id="keyassistanceOfTheHall" disabled><img
+                                src="img/Ata_new.jpg"
+                                alt=""></button>
+                    </div>
+                </div>
+                <div><input type="text" class="question" id="qs" disabled>
+                    <div class="answers">
+
+                        <div class="answer">
+                            <button onclick="checkAnswer(1)" id="keyAns1" disabled class="ansButton">А</button>
+                            <input type="text" disabled id="ans1" class="ansVar"></div>
+
+                        <div class="answer">
+                            <button onclick="checkAnswer(2)" id="keyAns2" disabled class="ansButton">B</button>
+                            <input type="text" disabled id="ans2" class="ansVar"></div>
+
+                        <div class="answer">
+                            <button onclick="checkAnswer(3)" id="keyAns3" disabled class="ansButton">C</button>
+                            <input type="text" disabled id="ans3" class="ansVar"></div>
+
+                        <div class="answer">
+                            <button onclick="checkAnswer(4)" id="keyAns4" disabled class="ansButton">D</button>
+                            <input type="text" disabled id="ans4" class="ansVar"></div>
+
+                    </div>
+                    <input type="text" id="statusLine" disabled class="statusLine">
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; Никита Юрьевич Куля.</p>
+        <p>Все материалы со сторонних сайтов использованы только для обучения</p>
+        <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47423350 = new Ya.Metrika2({ id:47423350, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47423350" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    </div>
+</footer>
+</body>
+</html>

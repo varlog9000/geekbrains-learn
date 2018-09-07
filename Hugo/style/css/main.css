@@ -1,0 +1,340 @@
+extend ' p' has no matches
+extend ' h2' has no matches
+@import url('font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i');
+body {
+  background-color: #959595;
+}
+.container {
+  background-color: white;
+  width: 1440px;
+  margin: 0 auto;
+}
+.container * {
+  padding: 0;
+  margin: 0;
+}
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
+.container p,
+.container a {
+  font-family: 'Roboto', sans-serif;
+}
+.container h2 {
+  color: #252525;
+  font-size: 48px;
+  font-weight: 100;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+.container h3 {
+  color: #959595;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.container p {
+  color: #959595;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+}
+.container a {
+  color: #1ba3d9;
+  text-decoration: none;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+.container .padding-left {
+  padding-left: 134px;
+}
+.container .padding-right {
+  padding-right: 134px;
+}
+.container .text-color {
+  color: #959595;
+}
+.container header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container header a {
+  color: black;
+}
+.container header a:hover {
+  color: #959595;
+}
+.container .social-links {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .slider {
+  position: relative;
+  height: 820px;
+}
+.container .slider .slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.container .slider .slider-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.3;
+}
+.container .slider .slider-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -445px;
+  margin-top: -150px;
+  z-index: 2;
+}
+.container .slider .slider-next-link {
+  position: absolute;
+  bottom: 29px;
+  left: 50%;
+  z-index: 100;
+  font-size: 30px;
+  opacity: 0.5;
+  color: black;
+}
+.container .block-height-480 {
+  height: 480px;
+}
+.container .block-left {
+  display: inline-block;
+  padding-top: 120px;
+  padding-right: 150px;
+}
+.container .block-right {
+  display: inline-block;
+  padding-top: 120px;
+  padding-left: 115px;
+}
+.container .line-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .block-1-2 {
+  width: 720px;
+}
+.container .store-links {
+  margin-top: 56px;
+}
+.container .store-links img {
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.container .store-links a {
+  margin-right: 10px;
+}
+.container .store-links a:hover img {
+  background-color: #959595;
+}
+.container .store-links a:active img {
+  position: relative;
+  top: 1px;
+}
+.container .follow-us {
+  margin-top: 47px;
+}
+.container .follow-us a {
+  color: #959595;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-decoration: none;
+}
+.container .follow-us a:hover {
+  text-decoration: underline;
+}
+.container .follow-us .menu {
+  display: flex;
+  margin-top: 20px;
+  padding-top: -3px;
+  height: 15px;
+}
+.container .follow-us .menu li {
+  list-style-type: none;
+}
+.container .follow-us .menu li:before {
+  content: "";
+  display: inline-block;
+  background-color: #959595;
+  width: 2px;
+  height: 70%;
+  padding-top: 0;
+  margin: 0 5px;
+}
+.container .follow-us .menu :first-child:before {
+  background-color: transparent;
+}
+.container .featured-album {
+  position: relative;
+}
+.container .featured-album .featured-album-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.container .featured-album .featured-album-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #19314b;
+  opacity: 0.9;
+}
+.container .featured-album .disk {
+  position: absolute;
+  top: 105px;
+  right: 175px;
+  z-index: 2;
+}
+.container .featured-album .album {
+  position: absolute;
+  top: 105px;
+  left: 175px;
+  z-index: 3;
+}
+.container .video {
+  position: relative;
+}
+.container .video .video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.container .video .video-cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.3;
+}
+.container .video .video-play-button {
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -50px;
+  z-index: 2;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: #111a19;
+  opacity: 0.8;
+  color: white;
+  line-height: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+.container .video .video-play-button:hover {
+  background-color: #FF0000;
+  opacity: 1;
+}
+.container .next-event {
+  padding: 120px 200px 120px 135px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .next-event p {
+  font-size: 16px;
+  font-weight: 300;
+}
+.container .next-event .time-header {
+  width: 350px;
+}
+.container .next-event .time {
+  text-align: center;
+}
+.container .instagram {
+  background-color: black;
+  position: relative;
+  z-index: 0;
+}
+.container .instagram a {
+  height: 240px;
+}
+.container .instagram a img {
+  opacity: 0.5;
+}
+.container .instagram a :hover {
+  opacity: 1;
+}
+.container .instagram p {
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 100;
+  text-decoration: none;
+}
+.container .instagram .instagram-link {
+  width: 370px;
+  height: 116px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin-top: -90px;
+  margin-left: -185px;
+  padding: 32px 0;
+  background-color: #1ba3d9;
+  background-image: linear-gradient(to right, #3359ac 0%, #1ba3d9 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  text-decoration: none;
+  line-height: 180px;
+}
+.container .instagram .instagram-link:hover p {
+  font-weight: 300;
+}
+.container footer {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container footer p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.container footer a {
+  color: #959595;
+}
+.container footer a:hover {
+  color: black;
+}
+.container footer .logo-copyright {
+  width: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

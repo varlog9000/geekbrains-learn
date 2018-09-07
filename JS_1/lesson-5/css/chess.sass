@@ -1,0 +1,55 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+#chess
+  width: 840px
+  margin: 20px auto
+  display: grid
+  grid-template-columns: 40px repeat(8, 1fr) 40px
+  grid-template-rows: 40px repeat(8, 1fr) 40px
+  border: 1px solid #000
+
+.text_coordinates
+  font-weight: 800
+.chess__square
+  display: block
+  height: 100px
+  //width: 100px
+  border: 1px solid lightgray
+  font-size: 75px
+  text-align: center
+  &_black
+    background-color: saddlebrown
+  &_white
+    background-color: bisque
+.chess__coordinates
+  //font-size: 20px
+  //border: 1px solid #000
+  &_horizontal
+    @extend .text_coordinates
+    text-align: center
+    line-height: 40px
+    border: solid #000
+    border-width: 0 0 0 1px
+    &:nth-child(10)
+      border-width: 1px 0 0 0
+    &:nth-child(91)
+      border-width: 1px 0 0 0
+    &-invert
+      @extend .chess__coordinates_horizontal
+      transform: rotate(180deg)
+  &_vertical
+    @extend .text_coordinates
+    line-height: 100px
+    text-align: center
+    border: solid #000
+    border-width: 1px 0 0 0
+    //&:nth-child(90)
+      border-width: 0 0 0 0
+    &-invert
+      @extend .chess__coordinates_vertical
+      transform: rotate(180deg)
+
+.none
+  background-color: #eeeeee

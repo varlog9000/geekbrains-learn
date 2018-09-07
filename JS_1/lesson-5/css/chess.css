@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+#chess {
+  width: 840px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 40px repeat(8, 1fr) 40px;
+  grid-template-rows: 40px repeat(8, 1fr) 40px;
+  border: 1px solid #000; }
+
+.text_coordinates, .chess__coordinates_horizontal, .chess__coordinates_horizontal-invert, .chess__coordinates_vertical, .chess__coordinates_vertical-invert {
+  font-weight: 800; }
+
+.chess__square {
+  display: block;
+  height: 100px;
+  border: 1px solid lightgray;
+  font-size: 75px;
+  text-align: center; }
+  .chess__square_black {
+    background-color: saddlebrown; }
+  .chess__square_white {
+    background-color: bisque; }
+
+.chess__coordinates_horizontal, .chess__coordinates_horizontal-invert {
+  text-align: center;
+  line-height: 40px;
+  border: solid #000;
+  border-width: 0 0 0 1px; }
+  .chess__coordinates_horizontal:nth-child(10), .chess__coordinates_horizontal-invert:nth-child(10) {
+    border-width: 1px 0 0 0; }
+  .chess__coordinates_horizontal:nth-child(91), .chess__coordinates_horizontal-invert:nth-child(91) {
+    border-width: 1px 0 0 0; }
+  .chess__coordinates_horizontal-invert {
+    transform: rotate(180deg); }
+.chess__coordinates_vertical, .chess__coordinates_vertical-invert {
+  line-height: 100px;
+  text-align: center;
+  border: solid #000;
+  border-width: 1px 0 0 0; }
+  .chess__coordinates_vertical-invert {
+    transform: rotate(180deg); }
+
+.none {
+  background-color: #eeeeee; }
+
+/*# sourceMappingURL=chess.css.map */

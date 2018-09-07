@@ -1,0 +1,101 @@
+
+main
+  background-image: url(img/wwtbam-background_02.jpg)
+  //background-repeat: no-repeat
+  -webkit-background-size: cover
+  background-size: cover
+
+.game
+  height: 100%
+  display: flex
+  align-items: flex-end
+
+.question-answer
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+.question
+  width: 100%
+  height: 50px
+
+.answers
+  width: 100%
+  //height: 200px
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  button
+    width: 50px
+  input
+    width: 90%
+    height: 100%
+
+.answer
+  display: flex
+  width: 48%
+  height: 50px
+  margin: 5px
+  border-radius: 120px
+
+.ansVar
+  border-radius: 120px
+
+.commandKey
+  width: 100%
+  display: flex
+  justify-content: space-between
+  div
+    display: flex
+    button
+      margin: 5px
+
+.tips, .control
+  button
+    background-color: transparent
+    outline: none
+    border: none
+    img
+      border: 1px solid transparent
+      height: 45px
+      border-radius: 51%
+      &:hover
+        -webkit-filter: invert(1)
+        filter: invert(1)
+  button[disabled]
+    img
+      opacity: 0
+
+.control
+  button
+    img
+      border-radius: 50px
+.statusLine
+  width: 100%
+  height: 25px
+  margin: 5px
+  border-radius: 120px
+.question
+  margin: 5px
+  border-radius: 120px
+
+input
+  text-align: center
+  font-weight: 800
+  font-size: 16px
+
+.ansButton
+  border-radius: 50%
+  color: black
+  font-weight: 800
+  font-size: 16px
+  &:hover
+    background-color: orangered
+  &:focus
+    outline: none
+
+.logo
+  width: 40%
+  justify-self: center
+  border-radius: 50%

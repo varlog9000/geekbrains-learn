@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Практикум</title>
+    <script src="text.js"></script>
+    <script>
+        var event, //то, что выбрал пользователь
+        ok, //Проверка ответа
+        current, //Текущее состояние
+        gaming = true; //Идет игра
+
+        current = works[0];
+
+        //Процесс игры
+        while (gaming)
+        {
+            var count = 0, answers = '';
+
+            //Формируем строку ответа
+            for (var key in current.answer)
+            {
+                answers += current.answer[key];
+                count++;
+            }
+            if(count === 0)
+            {
+                alert(current.text);
+                gaming = false;
+                break;
+            }
+
+            //Ввод события и проверка его на правильность
+            do {
+                ok = false;
+                event = parseInt(prompt(current.text + answers + '-1 - Выход из игры'));
+                if(event === -1){
+                    alert('Спасибо за игру!');
+                    gaming = false;
+                    break;
+                } else {
+                    ok = isAnswer(count, event);
+                }
+            } while (!ok);
+
+            //Переход к след. вопросу
+            current = works[current.jump[event]];
+        }
+
+        //Функция проверки ответа
+        function isAnswer(q, event) {
+            if(isNaN(event) || !isFinite(event)){
+                alert('Введен недопустимый символ.');
+                return false;
+            } else if(event < 1 || event > q){
+                alert('Ваше число выходит из диапазона.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
