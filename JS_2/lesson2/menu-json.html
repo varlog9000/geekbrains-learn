@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <script>
+        //Класс Menu
+        function Menu(myId, myClass, myItems) {
+            this.id = myId;
+            this.className = myClass;
+            this.items = myItems;
+        }
+
+
+        Menu.prototype.render = function () {
+            var result = '<ul class="' + this.className + '" id="' + this.id + '">';
+
+            for (var i = 0; i < this.items.length; i++) {
+                if (this.items[i] instanceof MenuItem) {
+                    result += this.items[i].renderItem();
+                }
+                if (this.items[i] instanceof Menu) {
+                    result += this.items[i].render();
+                    // for (var j = 0; j < this.items.length; i++) {
+                    //
+                    // }
+                }
+                console.log(this.items[i]);
+            }
+            // result += '<a href="#" id="clearMenu" >Удалить</a>';
+            result += '</ul>';
+            return result;
+        };
+        //Удаление меню
+        Menu.prototype.removeMenu = function () {
+            var trashElement = document.getElementById('menu1');
+            console.log(trashElement);
+            trashElement.parentNode.removeChild(trashElement);
+            // console.log(trashElement);
+
+        };
+
+        //Класс для пункта меню
+        function MenuItem(href, title) {
+            this.href = href;
+            this.title = title;
+        }
+
+        MenuItem.prototype.renderItem = function () {
+            return '<li><a href="' + this.href + '">' + this.title + '</a></li>';
+        };
+
+        window.onload = function () {
+
+            // function SubMenu = new
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './menu.json', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState !== 4) {
+                    console.log("Ошибка");
+                    return;
+                }
+                if (xhr.status !== 200) {
+                    return;
+                }
+
+                var data = JSON.parse(xhr.responseText);
+                var itemJson = [];
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    console.log(itemJson);
+                    if (data[i].subMenu = Array) {
+                        var subItemJSON=[];
+                        console.log('OK');
+                        for (var j = 0; j < data[i].subMenu.length; j++){
+                            console.log('j=',j);
+                            subItemJSON.push(new MenuItem(data[i].subMenu[j].href, data[i].subMenu[j].desc));
+
+                        }
+                        itemJson.push(new Menu(data[i].subMenuId, data[i].subMenuClass, subItemJSON));
+
+                    } else{
+                        itemJson.push(new MenuItem(data[i].href, data[i].desc))
+                    }
+                }
+
+                var menuMain = new Menu('my1', 'my1', itemJson);
+                var menu1 = document.getElementById('menu1');
+                menu1.innerHTML = menuMain.render();
+
+                var clearMenuButton = document.getElementById('clearMenu');
+                // console.log(clearMenuButton);
+                clearMenuButton.addEventListener("click", menuMain.removeMenu);
+                // menuMain.removeMenu();
+            };
+            xhr.send();
+
+            //  [
+            //     new MenuItem('/', 'Home'),
+            //     new MenuItem('/about', 'О нас'),
+            //     new MenuItem('/service', 'Услуги'),
+            //     new Menu('submenu1', 'submenu1', [
+            //         new MenuItem('/traditional', 'Традиционные'),
+            //         new MenuItem('/nontraditional', 'Нертадиционные'),
+            //     ]),
+            //     new MenuItem('/blog', 'Блог'),
+            //     new MenuItem('/contacts', 'Контакты'),
+            // ]);
+
+
+        };
+        // console.log(this.items)
+
+    </script>
+</head>
+<body>
+<a href="#" id="clearMenu">Удалить</a>
+<div id="menu1"></div>
+
+</body>
+</html>

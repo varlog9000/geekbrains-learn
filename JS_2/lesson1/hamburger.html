@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        // Константы для соусов и начинки
+        var SIZE_SMALL = [50, 20];
+        var SIZE_LARGE = [100, 40];
+        var STUFFING_CHEESE = [10, 20];
+        var STUFFING_SALAD = [20, 5];
+        var STUFFING_POTATO = [15, 10];
+        var TOPPING_MAYO = [20, 5];
+        var TOPPING_MUSTARD = [15, 0];
+        var TOPPING_KETCHUP = [15, 5];
+
+
+        class Hamburger {
+            constructor(size, stuffing, topping) {
+                this.size = size;
+                this.stuffing = stuffing;
+                this.topping = topping;
+            }
+
+
+            // получение выбранной начинки
+            getStuffing() {
+                var radio = document.getElementsByClassName('stuffing');
+                //начальное значение
+                var stuffing = 0;
+                for (var j = 0; j < radio.length; j++) {
+                    if (radio[j].checked) {
+                        var selectedRadio = radio[j];
+                        stuffing = selectedRadio.value;
+                    }
+                }
+                this.stuffing = stuffing;
+            }
+
+            // получение выбранных топпингов
+            getTopping() {
+                var checkboxes = document.getElementsByClassName('topping');
+                //начальное значение
+                var topping = new Array();
+                for (var j = 0; j < checkboxes.length; j++) {
+                    if (checkboxes[j].checked) {
+                        var selectedTopping = checkboxes[j];
+                        topping.push(selectedTopping.value);
+                    }
+                }
+                this.topping = topping;
+            }
+
+            // получение выбранного размера
+            getSize() {
+                var sizeIndex = document.getElementById("size").options.selectedIndex;
+                var selectedSize = document.getElementById("size").options[sizeIndex].value;
+                this.size = selectedSize;
+            }
+
+            // расчет итоговой цены объекта
+            calculatePrice() {
+                var sumPrice = (this.size == 'large') ? SIZE_LARGE[0] : SIZE_SMALL[0];
+                // for (var i in this.stuffing) {
+                    switch (this.stuffing) {
+                        case 'cheese':
+                            sumPrice += STUFFING_CHEESE[0];
+                            // continue;
+                            break;
+                        case 'salad':
+                            sumPrice += STUFFING_SALAD[0];
+                            // continue;
+                            break;
+                        case 'potato':
+                            sumPrice += STUFFING_POTATO[0];
+                            // continue;
+                            break;
+                        default:
+                            // continue;
+                            break;
+                    }
+                // }
+
+                for (var i in this.topping) {
+                    switch (this.topping[i]) {
+                        case 'mayo':
+                            sumPrice += TOPPING_MAYO[0];
+                            continue;
+                        case 'mustard':
+                            sumPrice += TOPPING_MUSTARD[0];
+                            continue;
+                        case 'ketchup':
+                            sumPrice += TOPPING_KETCHUP[0];
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+
+                return sumPrice;
+            }
+
+            calculateCalories() {
+                var sumCalories = (this.size == 'large') ? SIZE_LARGE[1] : SIZE_SMALL[1];
+                // for (var i in this.stuffing) {
+                    switch (this.stuffing) {
+                        case 'cheese':
+                            sumCalories += STUFFING_CHEESE[1];
+                            break;
+                        case 'salad':
+                            sumCalories += STUFFING_SALAD[1];
+                            break;
+                        case 'potato':
+                            sumCalories += STUFFING_POTATO[1];
+                            break;
+                        default:
+                            // continue;
+                    break;
+                    }
+                // }                ;
+                for (var i in this.topping) {
+                    switch (this.topping[i]) {
+                        case 'mayo':
+                            sumCalories += TOPPING_MAYO[1];
+                            break;
+                        case 'mustard':
+                            sumCalories += TOPPING_MUSTARD[1];
+                            break;
+                        case 'ketchup':
+                            sumCalories += TOPPING_KETCHUP[1];
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+
+                return sumCalories;
+            }
+
+        }
+
+
+        function GetOrder() {
+            var theHamburger = new Hamburger(); //Создается объект бугер
+
+            //Производится подсчет калорий и цены
+            theHamburger.getSize();
+            theHamburger.getStuffing();
+            theHamburger.getTopping();
+
+            //Выводим данные:
+            var price = theHamburger.calculatePrice();
+            var calories = theHamburger.calculateCalories();
+            var div = document.getElementById('result');
+            div.style = 'display: block; font-size: 18px; margin-top:15px';
+            div.innerText = "Цена за бургер: " + price + ' р. В нём ' + calories + ' калорий';
+            console.log(theHamburger);
+        }
+
+        window.onload = function () {
+            // Готовность кнопки
+            var order = document.getElementById("order");
+            order.addEventListener("click", function (event) {
+                GetOrder();
+                order.innerText = 'Пересчитать';
+            });
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="hamburger.html" name="order" method="get">
+    <select name="size" id="size" size="2">
+        <option value="large" selected="selected">Большой бургер</option>
+        <option value="small">Маленький бургер</option>
+    </select>
+    <div name="stuffing" id="stuffing">
+        <h3>Выберите начинку</h3>
+        <label><input name="stuffing" type="radio" class="stuffing" value="cheese" checked>Сыр</label>
+        <label><input name="stuffing" type="radio" class="stuffing" value="salad">Салат</label>
+        <label><input name="stuffing" type="radio" class="stuffing" value="potato">Картофель</label>
+    </div>
+    <div name="topping" id="topping">
+        <h3>Добавьте топпинги</h3>
+        <label><input type="checkbox" class="topping" value="mayo">Майонез</label>
+        <label><input type="checkbox" class="topping" value="mustard">Горчица</label>
+        <label><input type="checkbox" class="topping" value="ketchup">Кетчуп</label>
+    </div>
+    <button id="order" type="button">Посчитать</button>
+</form>
+<div id="result"></div>
+</body>
+</html>

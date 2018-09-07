@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson1</title>
+    <script>
+        //'use strict';
+
+        var user = {
+            name: 'Anna',
+            email: '1@2.ru',
+            space: 0,
+            run: function (h) {
+                this.space += h; //this.space = this.space + h;
+                console.log('Пользователь', this.name ,' пробежал', h, 'м.');
+                console.log('Всего', this.space, 'м.')
+            }
+        };
+
+        //ES5 - window
+        //ES6 - undefined
+        function showInfo(tel1, tel2) {
+            console.log(this);
+            console.log('Имя:', this.name);
+            console.log('E-mail:', this.email);
+            console.log('Tels:', tel1, tel2);
+        }
+
+        console.log(user);
+        console.log(user.name, user.email);
+        user.run(500);
+        user.run(700);
+        user.run(500);
+
+        //showInfo();
+
+        //call, apply
+        showInfo.call(user, '+7 800', '8 800');
+        showInfo.apply(user, ['+7 800', '8 800']);
+
+        //bind
+        var myShow = showInfo.bind(user);
+        myShow('Bind +7 800', '8 800');
+        myShow('Bind +7 800', '8 800');
+        myShow('Bind +7 800', '8 800');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

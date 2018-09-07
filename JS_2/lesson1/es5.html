@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP ES5</title>
+    <script>
+        //Класс, чертеж
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        User.prototype.showInfo = function () {
+            console.log('Имя', this.name);
+            console.log('Возраст', this.age);
+        };
+        
+        //Наследование
+        function Developer(name, age, department, salary) {
+            User.call(this, name, age);
+            this.department = department;
+            this.salary = salary;
+        }
+
+        //Наследования prototype
+        Developer.prototype = Object.create(User.prototype);
+        Developer.prototype.constructor = Developer;
+
+        Developer.prototype.showDeveloperInfo = function () {
+            console.log('Расширенная информация');
+            this.showInfo();
+            console.log('Department', this.department);
+            console.log('Salary', this.salary);
+        };
+
+        //Экземпляр или объект
+        var user1 = new User('Anna', 25);
+        console.log(user1);
+        console.log(user1.name);
+        user1.name = '-';
+        user1.showInfo();
+
+        console.log(['1', '2', '3']);
+
+        var user2 = new Developer('Olga', 27, 'Frontend', 90000);
+        console.log(user2);
+        user2.showInfo();
+
+        user2.showDeveloperInfo();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

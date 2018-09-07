@@ -1,0 +1,36 @@
+[
+  {
+    "href": "/",
+    "desc": "Home"
+  },
+  {
+    "href": "/about",
+    "desc": "О нас"
+  },
+  {
+    "href": "/service",
+    "desc": "Услуги"
+  },
+  {
+    "subMenu": [
+      {
+        "href": "/traditional",
+        "desc": "Традиционные"
+      },
+      {
+        "href": "/nontraditional",
+        "desc": "Нертадиционные"
+      }
+    ],
+    "subMenuId": "submenu",
+    "subMenuClass": "submenu"
+  },
+  {
+    "href": "/blog",
+    "desc": "Блог"
+  },
+  {
+    "href": "/contacts",
+    "desc": "Контакты"
+  }
+]
