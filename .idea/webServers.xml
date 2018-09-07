@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c7b08d91-e5b8-456e-8938-635b9812e328" name="varlog9000.ru (project level)" url="http://varlog9000.ru">
+        <fileTransfer host="192.168.31.3" port="21" rootFolder="/var/www/varlog9000.ru/www">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
